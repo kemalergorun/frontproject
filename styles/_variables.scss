@@ -40,8 +40,8 @@ $clr-sky: #00bcd4;
 $clr-sky-medium: #80deea;
 $clr-sky-light: #b2ebf2;
 $clr-sky-lighter: #e0f7fa;
-$lineer-gradient-dark: linear-gradient(0deg, #000 70%, #ffffff 100%);
-$lineer-gradient-light: linear-gradient(0deg, #e2d4f7 70%, #925fe2 100%);
+$linear-gradient-dark: linear-gradient(0deg, #000 70%, #ffffff 100%);
+$linear-gradient-light: linear-gradient(0deg, #e2d4f7 70%, #925fe2 100%);
 
 // SCREEN SIZES
 $screen-xs: 320px;
@@ -128,9 +128,3 @@ $shadow-lg-light: 0px 0px 12px #e2d4f7;
 $swal2-confirm-button-background-color: $clr-purple;
 $swal2-cancel-button-background-color: $clr-purple-light;
 $swal2-success: $clr-success;
-
-
-
-
-
-

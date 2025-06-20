@@ -1,0 +1,180 @@
+@use "@/styles/variables" as *;
+
+// Animations
+@import "@/styles/classes/animations";
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: $clr-black;
+}
+
+.contentContainer{
+    color: $clr-white;
+    z-index: 3;
+    font-family: $font-modulus;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $padding-lg;
+    gap: $gap-lg;
+}
+
+.title{
+    font-size: $font-4xl;
+    font-weight: normal;
+    position: relative;
+    text-align: center;
+    padding: 0 $padding-3xl;
+}
+
+.description{
+    font-size: $font-lg;
+    font-weight: $text-light;
+    text-align: center;
+    font-style: italic;
+    padding: 0 $padding-3xl;
+    margin-bottom: $margin-lg;
+}
+
+.image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
+    border-radius: $rounded-full;
+    box-shadow: $shadow-lg-light;
+}
+
+.back{
+    z-index: 4;
+    font-family: $font-modulus;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $clr-white;
+    text-decoration: none;
+    background-color: $clr-black-light;
+    box-shadow: $shadow-lg-light;
+    padding: $padding-md;
+    border-radius: $rounded-sm;
+    transition:  background-color .3s ease-in-out;
+
+    &:hover{
+        background-color: $clr-black-lighter;
+    }
+}
+
+.blob{
+    position: absolute;
+    z-index: 2;
+    background-color: $clr-black-light;
+    border-radius: 30%;
+    opacity: .5;
+    animation: $animation-wiggle;
+
+    &:nth-child(1){
+        width: 50%;
+        height: 30%;
+        top: -10%;
+        left: -10%;
+    }
+
+    &:nth-child(2){
+        width: 10%;
+        height: 10%;
+        top: 50%;
+        left: 50%;
+    }
+
+    &:nth-child(3){
+        width: 90%;
+        height: 90%;
+        top: 50%;
+        right: -40%;
+    }
+
+    &:nth-child(4){
+        width: 60%;
+        height: 60%;
+        top: -20%;
+        right: -40%;
+    }
+
+    &:nth-child(5){
+        width: 40%;
+        height: 40%;
+        top: -20%;
+        right: -20%;
+    }
+
+    &:nth-child(6){
+        width: 10%;
+        height: 10%;
+        bottom: 20%;
+        left: 20%;
+    }
+
+    &:nth-child(7){
+        width: 20%;
+        height: 20%;
+        bottom: 0%;
+        left: 0%;
+    }
+    &:nth-child(8){
+        width: 15%;
+        height: 30%;
+        bottom: 30%;
+        left: 0%;
+    }
+}
+
+@media (max-width: $screen-3xl){
+    .title{
+        font-size: $font-3xl;
+    }
+    .description{
+        font-size: $font-sm;
+    }
+    .back{
+        font-size: $font-sm;
+
+    }
+}
+
+
+@media (max-width: $screen-xl){
+    .title{
+        font-size: $font-2xl;
+    }
+}
+
+
+@media (max-width: $screen-lg){
+
+    .contentContainer{
+        padding: $padding-md;
+        gap: $gap-xs;
+    }
+
+    .title{
+        padding: $padding-sm $padding-2xl;
+    }
+
+    .description{
+        font-size: $font-xs;
+        padding: $padding-sm $padding-2xl;
+    }
+
+    .back{
+        font-size: $font-xs;
+    }
+}
