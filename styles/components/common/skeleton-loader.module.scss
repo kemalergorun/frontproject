@@ -1,0 +1,15 @@
+@use '@/styles/variables' as *;
+
+// Animations
+@use "@/styles/classes/animations" as *;
+
+.skeleton{
+    height: 100%;
+    width: 100%;
+    animation: $animation-pulse;
+    border-radius: $rounded-md;
+}
+
+.rounded{
+    border-block-start-width: $rounded-full;
+}

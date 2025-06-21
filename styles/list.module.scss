@@ -1,0 +1,46 @@
+@use '@/styles/variables' as *;
+@use "@/styles/classes/hr.module.scss"  as *;
+@import "@/styles/classes/list-container.module.scss";
+@import "@/styles/classes/cards-container.module.scss";
+
+.hr{
+    margin-top: auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+    height: 100%;
+}
+
+.paginationContainer{
+    display: flex;
+    justify-content: center;
+    gap: $gap-sm;
+}
+
+@media (max-width: $screen-3xl){
+    .skeletonContainer{
+        > div{
+            flex: 1 1 600px;
+        }
+    }
+}
+
+@media (max-width: $screen-2xl){
+    .skeletonContainer{
+        > div{
+            flex: 1 1 400px;
+        }
+    }
+}
+
+@media (max-width: $screen-xl){
+    .skeletonContainer{
+        > div{
+            flex: 1 1 300px !important;
+            height: 150px !important;
+        }
+    }
+}

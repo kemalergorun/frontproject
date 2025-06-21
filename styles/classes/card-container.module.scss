@@ -1,0 +1,43 @@
+@use '@/styles/variables' as *;
+
+.cardContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $shadow-md-light;
+    background-color: $clr-smoke;
+    border: 1px solid $clr-sky;
+    border-radius: $rounded-sm;
+    padding: $padding-md;
+    flex: 1 1 450px;
+    transition: background-color .5s ease-in-out;
+    overflow: hidden;
+
+    &:hover{
+        background-color: $clr-sky-lighter !important;
+    }
+}
+
+@media (max-width: $screen-2xl){
+    .cardContainer{
+        flex: 1 1 350px;
+    }
+}
+
+@media (max-width: $screen-xl){
+    .cardContainer{
+        flex: 1 1 300px;
+    }
+}
+
+@media (max-width: $screen-lg){
+    .cardContainer{
+        padding: $padding-sm;
+    }
+}
+
+@media (max-width: $screen-sm){
+    .cardContainer{
+        flex: 1 1 100% !important;
+    }
+}

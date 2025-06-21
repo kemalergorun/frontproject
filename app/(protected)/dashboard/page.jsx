@@ -1,7 +1,11 @@
 import { auth } from "@/auth";
+import CreditScoreDistribution from "@/components/dashboard/CreditScoreDistribution";
 import DashboardBanner from "@/components/dashboard/DashboardBanner";
 import Notification from "@/components/dashboard/Notification";
 import ShortcutLink from "@/components/dashboard/ShortcutLink";
+import StudentsPerformanceScatterPlot from "@/components/dashboard/StudentsPerformanceScatterPlot";
+import TeacherDemographics from "@/components/dashboard/TeacherDemographics";
+import TimeSeriesChart from "@/components/dashboard/TimeSeriesChart";
 import UserInformation from "@/components/dashboard/UserInformation";
 import styles from "@/styles/pages/dashboard-page.module.scss";
 
@@ -35,7 +39,10 @@ export default async function DashboardPage() {
             {isStudent ? (
               <>{/* GradeCard */}</>
             ) : (
-              <>{/* <CreditScoreDistribution /> */}</>
+              <>
+                {" "}
+                <CreditScoreDistribution />
+              </>
             )}
           </div>
 
@@ -43,7 +50,10 @@ export default async function DashboardPage() {
             {isStudent ? (
               <>{/* LessonTeachers */}</>
             ) : (
-              <>{/* <TeacherDemographics /> */}</>
+              <>
+                {" "}
+                <TeacherDemographics role={role} />{" "}
+              </>
             )}
           </div>
         </div>
@@ -53,7 +63,9 @@ export default async function DashboardPage() {
             {isStudent ? (
               <>{/* LessonProgram */}</>
             ) : (
-              <>{/* <TimeSeriesChart /> */}</>
+              <>
+                <TimeSeriesChart role={role} />
+              </>
             )}
           </div>
 
@@ -61,7 +73,9 @@ export default async function DashboardPage() {
             {isStudent ? (
               <>{/* MeetingNotice */}</>
             ) : (
-              <>{/* <StudentPerformanceScatterPlot /> */}</>
+              <>
+                <StudentsPerformanceScatterPlot />{" "}
+              </>
             )}
           </div>
         </div>

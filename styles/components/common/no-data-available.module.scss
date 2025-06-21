@@ -1,0 +1,41 @@
+@use '@/styles/variables' as *;
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: $clr-sky-lighter;
+    border-radius: $rounded-xl;
+    overflow: hidden;
+    flex: 1;
+    padding: $padding-sm $padding-md;
+}
+
+.innerContainer{
+    height: 100%;
+    background-color: $clr-sky-light;
+    padding: $padding-md;
+    border-radius: $rounded-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    text-align: center;
+    color: $clr-sky-dark;
+    font-family: $font-modulus;
+    font-size: $font-lg;
+    font-weight: $text-bold;
+}
+
+@media screen and (max-width: $screen-3xl){
+    .text{
+        font-size: $font-md;
+    }
+}
+
+@media screen and (max-width: $screen-2xl){
+    .text{
+        font-size: $font-sm;
+    }
+}

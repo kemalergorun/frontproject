@@ -1,0 +1,58 @@
+@use '@/styles/variables' as *;
+
+// CLASSES
+@import '@/styles/classes/card-container.module.scss';
+@import '@/styles/classes/card-header.module.scss';
+@import '@/styles/classes/card-body.module.scss';
+@import '@/styles/classes/built-in.module.scss';
+@import '@/styles/classes/order-number.module.scss';
+
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-xs $padding-sm;
+    border-radius: $rounded-sm;
+    background-color: $clr-sky-lighter;
+}
+
+.detailLabel {
+    font-size: $font-md;
+    font-weight: bold;
+}
+
+.detailValue {
+    font-size: $font-md;
+    text-align: right;
+}
+
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    gap: $gap-sm;
+}
+
+@media (max-width: $screen-3xl) {
+
+    .detailLabel,
+    .detailValue {
+        font-size: $font-sm;
+    }
+}
+
+@media (max-width: $screen-lg) {
+    .detail {
+        padding: $padding-xs;
+    }
+
+    .detailLabel,
+    .detailValue {
+        font-size: $font-xs;
+    }
+}
+
+
+
+
+
+
