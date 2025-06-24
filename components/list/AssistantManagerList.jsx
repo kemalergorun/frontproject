@@ -1,12 +1,18 @@
-import { getAdminsByPage } from "@/actions/admin/get-admins-by-page.action";
 import styles from "@/styles/list.module.scss";
 import NoDataAvailable from "../common/NoDataAvailable";
 import AdminCard from "../cards/AdminCard";
 import Pagination from "../common/Pagination";
 import { calculateOrderNumber } from "@/utils/functions/calculate-order-number";
+import { getAssistantManagerByPage } from "@/actions/assistant-manager/get-assistant-manager-by-page.action";
+import { deleteAssistantManager } from "@/actions/assistant-manager/delete-assistant-manager.action";
 
-export default async function AdminList({ page, size, sort, type }) {
-  const data = await getAdminsByPage({ page: page - 1, size, sort, type });
+export default async function AssistantManagerList({ page, size, sort, type }) {
+  const data = await getAssistantManagerByPage({
+    page: page - 1,
+    size,
+    sort,
+    type,
+  });
 
   const isDataAvailable =
     data &&
@@ -23,6 +29,9 @@ export default async function AdminList({ page, size, sort, type }) {
               key={index}
               data={item}
               orderNumber={calculateOrderNumber(page, size, index)}
+              isEditButton
+              deleteAction={deleteAssistantManager}
+              type="assistant-manager"
             />
           ))
         ) : (
@@ -31,7 +40,7 @@ export default async function AdminList({ page, size, sort, type }) {
       </div>
       <hr className={styles.hr} />
       <Pagination
-        baseUrl="/dashboard/manage/admin"
+        baseUrl="/dashboard/manage/assistant-manager"
         currentPage={+page}
         size={size}
         totalPages={data?.totalPages}

@@ -1,12 +1,12 @@
 import { ListSkeleton } from "@/components/common/ListSkeleton";
 import PageTitle from "@/components/common/PageTitle";
 import PlusLink from "@/components/common/PlusLink";
-import AdminList from "@/components/list/AdminList";
+import AssistantManagerList from "@/components/list/AssistantManagerList";
 import styles from "@/styles/page.module.scss";
 import { Suspense } from "react";
-import { RiAdminFill } from "react-icons/ri";
+import { MdAssistant } from "react-icons/md";
 
-export default async function AdminManagementPage(props) {
+export default async function AssistantManagerManagementPage(props) {
   const searchParameters = await props.searchParams;
   let { size, page, sort, type } = searchParameters;
 
@@ -18,14 +18,22 @@ export default async function AdminManagementPage(props) {
   return (
     <>
       <div className={styles.addContainer}>
-        <PlusLink href="/dashboard/manage/admin/new" title="Create new Admin">
-          <RiAdminFill />
+        <PlusLink
+          href="/dashboard/manage/assistant-manager/new"
+          title="Create new Assistant Manager"
+        >
+          <MdAssistant />
         </PlusLink>
       </div>
-      <PageTitle title="Admins" />
+      <PageTitle title="Assistant Managers (Vice Deans)" />
       <div className={styles.container}>
         <Suspense fallback={<ListSkeleton />}>
-          <AdminList size={size} page={page} sort={sort} type={type} />
+          <AssistantManagerList
+            size={size}
+            page={page}
+            sort={sort}
+            type={type}
+          />
         </Suspense>
       </div>
     </>

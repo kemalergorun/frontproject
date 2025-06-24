@@ -1,0 +1,80 @@
+@use '@/styles/variables' as *;
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: $clr-white;
+    height: 100%;
+    border-radius: $rounded-xl;
+    overflow: hidden;
+    padding: $padding-xl;
+    border:  1px solid $clr-sky-lighter;
+    box-shadow: $shadow-xs;
+    gap: $gap-md;
+
+    button{
+        margin-top: auto !important;
+    }
+}
+
+.inputContainer, .inputGroup{
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+}
+
+.label{
+    font-size: $font-lg;
+    font-weight: bold;
+    color: $clr-sky-dark;
+    margin-top: $margin-md;
+}
+
+.input{
+    padding: $padding-sm;
+    border: 1px solid $clr-sky;
+    border-radius: $rounded-sm;
+    font-size: $font-md;
+    color: $clr-sky-dark;
+}
+
+.select{
+    padding: $padding-sm;
+    border-radius: $rounded-sm;
+    border: 1px solid $clr-sky;
+    font-size: $font-md;
+
+    &:focus{
+        outline: none;
+        border: 1px solid $clr-sky-dark;
+        box-shadow: $shadow-md;
+    }
+
+}
+
+@media (max-width: $screen-lg) {
+    .formContainer {
+        width: 100%;
+    }
+
+    .input,
+    .label,
+    .select {
+        font-size: $font-sm;
+    }
+}
+
+@media (max-width: $screen-md) {
+    .formContainer {
+        padding: $padding-md;
+    }
+
+    .input,
+    .label,
+    .select {
+        font-size: $font-xs;
+    }
+}

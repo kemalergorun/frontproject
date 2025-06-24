@@ -1,10 +1,13 @@
 import styles from "@/styles/components/cards/admin-card.module.scss";
+import EditButton from "../common/EditButton";
+import DeleteButton from "../common/DeleteButton";
+import { deleteAdmin } from "@/actions/admin/delete-admin.action";
 
 export default function AdminCard({
   data,
   orderNumber,
   type = "admin",
-  deleteAction,
+  deleteAction = deleteAdmin,
   isEditButton,
 }) {
   const fullName = `${data?.name} ${data?.surname}`;
@@ -20,6 +23,23 @@ export default function AdminCard({
     { label: "Gender: ", value: data?.gender },
   ];
 
+  if (type === "student") {
+    dataToMap.push(
+      {
+        label: "Email",
+        value: data?.email,
+      },
+      {
+        label: "Student Number",
+        value: data?.studentNumber,
+      },
+      {
+        label: "Advisor",
+        value: `${data?.advisorTeacherName} ${data?.advisorTeacherSurname}`,
+      }
+    );
+  }
+
   const id = data?.id || data?.userId;
 
   return (
@@ -31,8 +51,20 @@ export default function AdminCard({
       <div className={styles.cardHeader}>
         @{data?.username}
         <div className={styles.buttonContainer}>
-          {isEditButton && <></>}
-          {/* DeleteButton */}
+          {isEditButton && (
+            <EditButton href={`/dashboard/manage/${type}/edit/${id}`} />
+          )}
+
+          <DeleteButton
+            cb={deleteAction}
+            title={`Delete ${fullName}`}
+            id={id}
+            simple
+            builtIn={data?.built_in}
+            errorText={`Failed to delete ${fullName}`}
+            questionText={`Are you sure you want to delete ${fullName}`}
+            successText={`${fullName} is deleted successfully.`}
+          />
         </div>
       </div>
       <div className={styles.cardBody}>
