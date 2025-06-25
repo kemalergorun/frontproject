@@ -40,7 +40,22 @@ export default function AdminCard({
     );
   }
 
+  if (type === "teacher") {
+    dataToMap.push(
+      {
+        label: "Email",
+        value: data?.email,
+      },
+      {
+        label: "Advisor Teacher",
+        value: data?.advisorTeacher ? "Yes" : "No",
+      }
+    );
+  }
+
   const id = data?.id || data?.userId;
+
+  console.log(data.id);
 
   return (
     <div

@@ -1,13 +1,19 @@
 "use client";
+
 import { updateAssistantManagerFormAction } from "@/actions/assistant-manager/update-assistant-manager-form.action";
-import styles from "@/styles/list.module.scss";
+import styles from "@/styles/form.module.scss";
 import { useActionState } from "react";
 import genderOptions from "@/data/gender-options.json";
 import adminFields from "@/data/admin-fields.json";
+import SubmitButton from "../common/SubmitButton";
+import { AlertText } from "../common/AlertText";
+import { updateManagerFormAction } from "@/actions/manager/update-manager-form.action";
 
 export default function UpdateManagerForm({ slug, data, type = "manager" }) {
   const formAction =
-    type === "manager" ? () => {} : updateAssistantManagerFormAction();
+    type === "manager"
+      ? updateManagerFormAction
+      : updateAssistantManagerFormAction;
 
   const [state, action, pending] = useActionState(formAction);
 
@@ -62,7 +68,7 @@ export default function UpdateManagerForm({ slug, data, type = "manager" }) {
       </div>
       <SubmitButton
         pending={pending}
-        text={`Create ${buttonTitle}`}
+        text={`Update Manager`}
         loadingText="Creating"
       />
     </form>
