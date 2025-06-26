@@ -1,18 +1,24 @@
-"use server";
+import { getAdvisorTeachers } from "@/actions/advisor-teacher/get-advisor-teachers.action";
+import { getStudentById } from "@/actions/student/get-student-by-id.action";
+import PageTitle from "@/components/common/PageTitle";
+import UpdateStudentForm from "@/components/forms/UpdateStudentForm";
 
-import { auth } from "@/auth";
+export default async function EditStudentPage(props) {
+  const { slug } = await props.params;
 
-export const createStudent = async (payload) => {
-  const session = await auth();
+  const [studentData, advisorTeacherData] = await Promise.all([
+    getStudentById(slug),
+    getAdvisorTeachers(),
+  ]);
 
-  const response = await fetch(`${process.env.BASE_API_URL}/students/save`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${session.token}`,
-    },
-    body: JSON.stringify(payload),
-  });
-
-  return response;
-};
+  return (
+    <>
+      <PageTitle title={`Update Teacher - ${slug}`} />
+      <UpdateStudentForm
+        slug={slug}
+        data={studentData}
+        advisorTeacherData={advisorTeacherData}
+      />
+    </>
+  );
+}

@@ -5,13 +5,19 @@ import styles from "@/styles/components/common/multi-select.module.scss";
 import { toggleItemSelection } from "@/utils/functions/toggle-item-selection";
 import { extractLessonPrograms } from "@/utils/functions/extract-lesson-programs";
 
-export const MultiSelect = ({ data, name, title, defaultValues }) => {
+export const MultiSelect = ({
+  data,
+  name,
+  title,
+  defaultValues,
+  isLessonProgram,
+}) => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState(
     defaultValues ? defaultValues.map((item) => item.value) : []
   );
 
-  const processedData = extractLessonPrograms(data);
+  const processedData = isLessonProgram ? extractLessonPrograms(data) : data;
 
   const dropdownRef = useRef(null);
 

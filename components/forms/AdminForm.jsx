@@ -8,6 +8,7 @@ import adminFields from "@/data/admin-fields.json";
 import { AlertText } from "../common/AlertText";
 import SubmitButton from "../common/SubmitButton";
 import { createAssistantManagerFormAction } from "@/actions/assistant-manager/create-assistant-manager-form.action";
+import { createManagerFormAction } from "@/actions/manager/create-manager-form.action";
 
 export default function AdminForm({ buttonTitle = "Admin", type = "admin" }) {
   let formAction;
@@ -16,11 +17,11 @@ export default function AdminForm({ buttonTitle = "Admin", type = "admin" }) {
     formAction = createAdminFormAction;
   } else if (type === "assistant-manager") {
     formAction = createAssistantManagerFormAction;
+  } else if (type === "manager") {
+    formAction = createManagerFormAction;
   }
 
   const [state, action, pending] = useActionState(formAction);
-
-  console.log(state);
 
   return (
     <form action={action} className={styles.form}>

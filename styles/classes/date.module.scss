@@ -1,0 +1,16 @@
+@use '@/styles/variables' as *;
+
+.ongoing{
+    color: $clr-success;
+    background-color: $clr-success-light;
+}
+
+.past{
+    color: $clr-danger;
+    background-color: $clr-danger-light;
+}
+
+.upcoming{
+    color: $clr-warning;
+    background-color: $clr-warning-light;
+}

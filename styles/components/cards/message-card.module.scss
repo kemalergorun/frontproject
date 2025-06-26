@@ -1,0 +1,102 @@
+@use '@/styles/variables' as *;
+
+@import '@/styles/classes/card-container.module.scss';
+@import '@/styles/classes/card-header.module.scss';
+@import '@/styles/classes/order-number.module.scss';
+@import '@/styles/classes/card-body.module.scss';
+
+.cardContainer{
+    color: $clr-sky;
+}
+
+.cardHeader{
+    color: $clr-sky-dark;
+    border-bottom: 1px solid $clr-sky;
+    padding-bottom: $padding-sm;
+}
+
+.cardBody{
+    flex: 1;
+    gap: $gap-sm
+}
+
+.date{
+    font-size: $font-md;
+}
+
+.nameEmail{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+    margin-bottom: 0;
+    gap: $gap-sm;
+}
+
+.name{
+    font-weight: bold;
+}
+
+.email{
+    color: $clr-sky-dark;
+    font-style: italic;
+}
+
+.message{
+    font-family: $font-modulus;
+    font-size: $font-sm;
+    color: $clr-black;
+}
+
+@media (max-width: $screen-2xl) {
+    .date {
+        font-size: $font-sm;
+    }
+
+    .message {
+        font-size: $font-xs;
+    }
+
+    .nameEmail {
+        font-size: $font-sm;
+        gap: $gap-xs;
+    }
+
+    .name {
+        font-size: $font-sm;
+    }
+}
+
+@media (max-width: $screen-lg) {
+    .date {
+        font-size: $font-sm;
+    }
+
+    .message {
+        font-size: $font-xs;
+    }
+
+    .nameEmail {
+        font-size: $font-sm;
+        gap: $gap-xs;
+    }
+
+    .name {
+        font-size: $font-sm;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    .nameEmail {
+        font-size: $font-xs;
+    }
+}
+
+
+
+
+
+
+
+
+
