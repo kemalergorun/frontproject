@@ -3,11 +3,10 @@
 import { errorObject } from "@/utils/functions/error-object";
 import { trimFormDataFields } from "@/utils/functions/trim-form-data-fields";
 import moment from "moment";
-import { createStudent, createTeacher } from "./create-student.action";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { createTeacherSchema } from "@/utils/validations/create-teacher-schema";
 import { createStudentSchema } from "@/utils/validations/create-student-schema";
+import { createStudent } from "./create-student.action";
 
 export const createStudentFormAction = async (state, formData) => {
   const trimmedData = trimFormDataFields(formData);
@@ -23,7 +22,6 @@ export const createStudentFormAction = async (state, formData) => {
   const payload = {
     ...validationResult.data,
     birthDay: moment(validationResult.data.birthDay).format("YYYY-MM-DD"),
-    isAdvisorTeacher: updatedData.isAdvisorTeacher,
   };
 
   let check;
@@ -31,16 +29,15 @@ export const createStudentFormAction = async (state, formData) => {
   try {
     const response = await createStudent(payload);
 
-    console.log(response);
-    if (!response.ok) return errorObject("Failed to create Student.");
+    const data = await response.json();
+
+    if (!response.ok) return errorObject("Failed to create student.", data);
 
     check = true;
 
-    const data = await response.json();
-
     return {
       status: "success",
-      message: "Student created successfully.",
+      message: "Student created successfully!",
     };
   } catch (error) {
     return errorObject("There was an error creating the student.");
