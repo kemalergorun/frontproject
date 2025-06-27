@@ -9,8 +9,6 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const createAdminFormAction = async (state, formData) => {
-  console.log(formData);
-
   const trimmedData = trimFormDataFields(formData);
 
   const validationResult = createAdminSchema.safeParse(trimmedData);
@@ -26,12 +24,13 @@ export const createAdminFormAction = async (state, formData) => {
     birthDay: moment(validationResult.data.birthDay).format("YYYY-MM-DD"),
   };
 
+
+  console.log("Payload: ", payload);
   let check;
 
   try {
     const response = await createAdmin(payload);
 
-    console.log(response);
     if (!response.ok) return errorObject("Failed to create admin.");
 
     check = true;
