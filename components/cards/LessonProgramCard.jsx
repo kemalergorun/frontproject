@@ -1,7 +1,5 @@
 import styles from "@/styles/components/cards/lesson-program-card.module.scss";
 import DeleteButton from "../common/DeleteButton";
-import { deleteEducationTerm } from "@/actions/education-term/delete-education-term.action";
-import moment from "moment";
 import { deleteLessonProgram } from "@/actions/lesson-program/delete-lesson-program.action";
 
 export default function LessonProgramCard({ data, orderNumber, authorized }) {

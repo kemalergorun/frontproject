@@ -1,0 +1,51 @@
+@use '@/styles/variables' as *;
+
+// ===================== CLASSES =====================
+@import '@/styles/classes/hr.module.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+    background-color: $clr-white;
+    padding: $padding-sm;
+    border-radius: $rounded-xl;
+    box-shadow: $shadow-xs;
+    border: 1px solid $clr-black-lighter;
+    min-height: 100%;
+}
+
+.container.lessonsTeacher {
+    align-items: center;
+
+    .chartContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        flex: 1;
+    }
+}
+
+.chartContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: $gap-xs;
+}
+
+// ========================= MEDIA QUERIES =========================
+
+@media (max-width: $screen-md) {
+    .chartContainer {
+        flex: 1;
+        align-self: stretch;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+
+
+

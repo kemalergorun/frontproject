@@ -1,6 +1,10 @@
 import { auth } from "@/auth";
 import CreditScoreDistribution from "@/components/dashboard/CreditScoreDistribution";
 import DashboardBanner from "@/components/dashboard/DashboardBanner";
+import Grades from "@/components/dashboard/Grades";
+import LessonPrograms from "@/components/dashboard/LessonPrograms";
+import LessonTeachers from "@/components/dashboard/LessonTeachers";
+import MeetingNotice from "@/components/dashboard/MeetingNotice";
 import Notification from "@/components/dashboard/Notification";
 import ShortcutLink from "@/components/dashboard/ShortcutLink";
 import StudentsPerformanceScatterPlot from "@/components/dashboard/StudentsPerformanceScatterPlot";
@@ -37,7 +41,9 @@ export default async function DashboardPage() {
         <div className={styles.contentOne}>
           <div className={styles.flexItemOne}>
             {isStudent ? (
-              <>{/* GradeCard */}</>
+              <>
+                <Grades />
+              </>
             ) : (
               <>
                 {" "}
@@ -48,7 +54,9 @@ export default async function DashboardPage() {
 
           <div className={styles.flexItemTwo}>
             {isStudent ? (
-              <>{/* LessonTeachers */}</>
+              <>
+                <LessonTeachers />
+              </>
             ) : (
               <>
                 {" "}
@@ -61,7 +69,10 @@ export default async function DashboardPage() {
         <div className={styles.contentOne}>
           <div className={styles.flexItemOne}>
             {isStudent ? (
-              <>{/* LessonProgram */}</>
+              <>
+                {" "}
+                <LessonPrograms />{" "}
+              </>
             ) : (
               <>
                 <TimeSeriesChart role={role} />
@@ -71,10 +82,12 @@ export default async function DashboardPage() {
 
           <div className={styles.flexItemTwo}>
             {isStudent ? (
-              <>{/* MeetingNotice */}</>
+              <>
+                <MeetingNotice />
+              </>
             ) : (
               <>
-                <StudentsPerformanceScatterPlot />{" "}
+                <StudentsPerformanceScatterPlot />
               </>
             )}
           </div>

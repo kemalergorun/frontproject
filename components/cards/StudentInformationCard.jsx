@@ -66,6 +66,8 @@ export default function StudentInformationCard({
     },
   ];
 
+  console.log(isPassingGrade(99));
+
   const id = data?.id || data?.userId;
 
   const fullName = `${data?.studentResponse?.name} ${data?.studentResponse?.surname}`;

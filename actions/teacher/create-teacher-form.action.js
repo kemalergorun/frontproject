@@ -20,7 +20,7 @@ export const createTeacherFormAction = async (state, formData) => {
       : [],
   };
 
-  const validationResult = createTeacherSchema.safeParse(trimmedData);
+  const validationResult = createTeacherSchema.safeParse(updatedData);
 
   if (!validationResult.success) {
     return {
@@ -41,7 +41,6 @@ export const createTeacherFormAction = async (state, formData) => {
   try {
     const response = await createTeacher(payload);
 
-    console.log(response);
     if (!response.ok) return errorObject("Failed to create Teacher.");
 
     check = true;

@@ -4,7 +4,7 @@ import MeetingCard from "../cards/MeetingCard";
 import Pagination from "../common/Pagination";
 import { calculateOrderNumber } from "@/utils/functions/calculate-order-number";
 import { getMeetingsByPage } from "@/actions/meeting/get-meetings-by-page.action";
-import { deleteMeeting } from "@/actions/message/delete-meeting.action";
+import { deleteMeeting } from "@/actions/meeting/delete-meeting.action";
 
 export default async function MeetingListForTeacher({
   page,
