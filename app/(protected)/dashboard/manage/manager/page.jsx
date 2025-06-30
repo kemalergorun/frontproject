@@ -20,7 +20,7 @@ export default async function AssistantManagerManagementPage(props) {
       <div className={styles.addContainer}>
         <PlusLink
           href="/dashboard/manage/manager/new"
-          title="Create new Manager"
+          title="Managers"
         >
           <MdAssistant />
         </PlusLink>

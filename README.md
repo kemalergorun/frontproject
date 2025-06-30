@@ -38,3 +38,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 Admin           D.nhr439976A.b
 Zeynep1         34773477Ze teacher
 Zeynep2             student
+manager332 123123Qwe
+admin332 123123Qwe

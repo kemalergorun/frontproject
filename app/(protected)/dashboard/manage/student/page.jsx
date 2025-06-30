@@ -20,7 +20,7 @@ export default async function StudentManagementPage(props) {
       <div className={styles.addContainer}>
         <PlusLink
           href="/dashboard/manage/student/new"
-          title="Create new Student"
+          title="Students"
         >
           <PiStudentFill />
         </PlusLink>

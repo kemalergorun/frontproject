@@ -20,7 +20,7 @@ export default async function TeacherManagementPage(props) {
       <div className={styles.addContainer}>
         <PlusLink
           href="/dashboard/manage/teacher/new"
-          title="Create new Teacher"
+          title="Teachers"
         >
           <FaChalkboardTeacher />
         </PlusLink>

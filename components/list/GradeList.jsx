@@ -1,13 +1,15 @@
+import { getStudentInformationAsStudent } from '@/actions/student-information/get-student-information-as-student.action';
 import styles from '@/styles/list.module.scss';
 import NoDataAvailable from '../common/NoDataAvailable';
-import LessonCard from '../cards/LessonCard';
-import Pagination from '../common/Pagination';
+import StudentInformationCard from '../cards/StudentInformationCard';
 import { calculateOrderNumber } from '@/utils/functions/calculate-order-number';
-import { getLessonsByPage } from '@/actions/lesson/get-lessons-by-page.action';
-import { deleteLesson } from '@/actions/lesson/delete-lesson.action';
+import Pagination from '../common/Pagination';
 
-export default async function LessonList({ page, size, sort, type }) {
-    const data = await getLessonsByPage({ page: page - 1, size, sort, type });
+export default async function GradeList({ page, size }) {
+    const data = await getStudentInformationAsStudent({
+        page: page - 1,
+        size
+    });
 
     const isDataAvailable =
         data &&
@@ -17,10 +19,10 @@ export default async function LessonList({ page, size, sort, type }) {
 
     return (
         <div className={styles.container}>
-            <div className={styles.cardContainer}>
+            <div className={styles.cardsContainer}>
                 {isDataAvailable ? (
                     data.content.map((item, index) => (
-                        <LessonCard
+                        <StudentInformationCard
                             key={index}
                             data={item}
                             orderNumber={calculateOrderNumber(
@@ -28,7 +30,7 @@ export default async function LessonList({ page, size, sort, type }) {
                                 size,
                                 index
                             )}
-                            deleteAction={deleteLesson}
+                            type="student"
                         />
                     ))
                 ) : (
@@ -37,7 +39,7 @@ export default async function LessonList({ page, size, sort, type }) {
             </div>
             <hr className={styles.hr} />
             <Pagination
-                baseUrl="/dashboard/manage/lesson"
+                baseUrl="/dashboard/grades"
                 currentPage={+page}
                 size={size}
                 totalPages={data?.totalPages}
