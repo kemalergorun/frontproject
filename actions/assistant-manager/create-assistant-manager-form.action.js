@@ -29,7 +29,7 @@ export const createAssistantManagerFormAction = async (state, formData) => {
   try {
     const response = await createAssistantManager(payload);
 
-    console.log(response);
+ 
     if (!response.ok) return errorObject("Failed to create Assistant Manager.");
 
     check = true;

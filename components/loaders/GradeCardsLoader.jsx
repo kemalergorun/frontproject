@@ -4,7 +4,7 @@ import { getStudentInformationAsStudent } from "@/actions/student-information/ge
 
 export default async function GradeCardsLoader() {
   const data = await getStudentInformationAsStudent(0, 2);
-  console.log(data);
+
   const isDataAvailable =
     data &&
     data.status !== "error" &&
@@ -13,7 +13,7 @@ export default async function GradeCardsLoader() {
 
   if (!isDataAvailable) return <NoDataAvailable />;
 
-  console.log("123", data);
+
 
   return (
     <>

@@ -4,10 +4,10 @@ import { BarChart } from "../charts/BarChart";
 
 export default async function CreditScoreLoader() {
   const data = await getLessons();
-  console.log(data);
+
   const isDataAvailable = data && data.status !== "error" && data.length > 0;
 
-  console.log(isDataAvailable);
+
   if (!isDataAvailable) return <NoDataAvailable />;
 
   return (

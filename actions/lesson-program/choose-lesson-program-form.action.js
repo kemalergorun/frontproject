@@ -38,7 +38,7 @@ export const chooseLessonProgramFormAction = async (state, formData) => {
       message: "Lesson program chosen successfully!",
     };
   } catch (error) {
-    console.log(error);
+  
     return errorObject("There was an error choosing the lesson program!");
   } finally {
     if (!check) return;

@@ -33,7 +33,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         const userInformation = { ...user, ...userInfo };
 
-        console.log(user);
+       
         return {
           user: userInformation,
           accessToken: user.token.split(" ")[1],

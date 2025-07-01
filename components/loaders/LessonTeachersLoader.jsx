@@ -5,7 +5,7 @@ import Avatar from '../common/Avatar';
 
 export default async function LessonTeachersLoader() {
     const data = await getLessonProgramAsStudent();
-    console.log('data: ', data);
+ 
 
     const isDataAvailable =
         data &&
@@ -17,7 +17,7 @@ export default async function LessonTeachersLoader() {
 
     const processedData = convertDataIntoTeachers(data);
 
-    console.log('processedData: ', processedData);
+
 
     return (
         <div

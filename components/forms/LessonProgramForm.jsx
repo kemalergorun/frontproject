@@ -24,7 +24,7 @@ export default function LessonProgramForm({ educationTermsData, lessonsData }) {
     termOptions = extractEducationTerm(educationTermsData);
   }
 
-  console.log(lessonsData);
+
 
   return (
     <form action={action} className={styles.form}>

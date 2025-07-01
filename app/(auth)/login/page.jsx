@@ -10,7 +10,7 @@ import { useActionState } from "react";
 export default function LoginPage() {
   const [state, action, pending] = useActionState(loginFormAction);
 
-  console.log(state);
+
 
   return (
     <form action={action} className={styles.form}>

@@ -31,7 +31,7 @@ export const updateAssistantManagerFormAction = async (state, formData) => {
   try {
     const response = await updateAssistantManager(payload, userId);
 
-    console.log(response);
+  
     if (!response.ok) return errorObject("Failed to update Assistant Manager.");
 
     check = true;

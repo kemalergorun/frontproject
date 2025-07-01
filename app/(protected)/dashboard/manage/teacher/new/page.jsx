@@ -9,7 +9,7 @@ export default async function NewTeacherPage() {
   const isDataAvailable =
     data && data.status !== "error" && Array.isArray(data) && data?.length;
 
-  console.log(data);
+ 
 
   const processedData = isDataAvailable ? data : [];
 

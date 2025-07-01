@@ -22,7 +22,7 @@ export default function UpdateStudentInformationForm({
     updateStudentInformationFormAction
   );
 
-  console.log(data);
+
 
   return (
     <form action={action} className={styles.form}>

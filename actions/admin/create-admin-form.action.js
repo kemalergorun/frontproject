@@ -25,7 +25,7 @@ export const createAdminFormAction = async (state, formData) => {
   };
 
 
-  console.log("Payload: ", payload);
+
   let check;
 
   try {

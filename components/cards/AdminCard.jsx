@@ -55,7 +55,7 @@ export default function AdminCard({
 
   const id = data?.id || data?.userId;
 
-  console.log(data.id);
+ 
 
   return (
     <div

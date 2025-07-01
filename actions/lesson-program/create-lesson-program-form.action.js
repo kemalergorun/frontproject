@@ -25,7 +25,7 @@ export const createLessonProgramFormAction = async (state, formData) => {
     };
   }
 
-  console.log(validationResult);
+ 
 
   let check;
 
@@ -45,7 +45,7 @@ export const createLessonProgramFormAction = async (state, formData) => {
       message: "Lesson program created successfully!",
     };
   } catch (error) {
-    console.log(error);
+   
     return errorObject("There was an error creating the lesson program!");
   } finally {
     if (!check) return;

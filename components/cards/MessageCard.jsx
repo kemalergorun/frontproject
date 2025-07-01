@@ -1,7 +1,7 @@
 import styles from "@/styles/components/cards/message-card.module.scss";
 
 export default function MessageCard({ data, orderNumber }) {
-  console.log(data);
+ 
 
   return (
     <div className={styles.cardContainer}>

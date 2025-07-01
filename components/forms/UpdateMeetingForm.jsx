@@ -12,8 +12,8 @@ import { updateMeetingFormAction } from "@/actions/meeting/update-meeting-form.a
 export default function UpdateMeetingForm({ studentsData, data, slug }) {
   const [state, action, pending] = useActionState(updateMeetingFormAction);
 
-  console.log("data: ", data);
-  console.log("studentsData: ", studentsData);
+ 
+  
 
   return (
     <form action={action} className={styles.form}>

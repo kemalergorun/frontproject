@@ -12,7 +12,7 @@ export default function ChooseLessonForm({ data }) {
     chooseLessonProgramFormAction
   );
 
-  console.log(data);
+
 
   return (
     <form action={action} className={styles.form}>

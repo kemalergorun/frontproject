@@ -10,7 +10,7 @@ import { createTeacherSchema } from "@/utils/validations/create-teacher-schema";
 
 export const updateTeacherFormAction = async (state, formData) => {
   const trimmedData = trimFormDataFields(formData);
-  console.log(trimmedData);
+ 
   const { id } = trimmedData;
 
   const updatedData = {
@@ -23,7 +23,7 @@ export const updateTeacherFormAction = async (state, formData) => {
 
   const validationResult = createTeacherSchema.safeParse(updatedData);
 
-  console.log(validationResult);
+  
 
   if (!validationResult.success) {
     return {
@@ -44,7 +44,7 @@ export const updateTeacherFormAction = async (state, formData) => {
   try {
     const response = await updateTeacher(payload, id);
 
-    console.log(response);
+ 
     if (!response.ok) return errorObject("Failed to update Teacher.", data);
 
     check = true;

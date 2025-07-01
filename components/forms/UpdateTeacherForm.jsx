@@ -13,7 +13,7 @@ import { extractSelectedLessonPrograms } from "@/utils/functions/extract-selecte
 export default function UpdateTeacherForm({ lessonProgramsData, data, slug }) {
   const [state, action, pending] = useActionState(updateTeacherFormAction);
 
-  console.log(lessonProgramsData);
+ 
 
   const style = {
     flexDirection: "column",
@@ -23,7 +23,7 @@ export default function UpdateTeacherForm({ lessonProgramsData, data, slug }) {
     gap: "24px",
   };
 
-  console.log(data);
+ 
   return (
     <form action={action} className={styles.form}>
       <div className={styles.inputContainer}>

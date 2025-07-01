@@ -4,7 +4,7 @@ import DeleteButton from '../common/DeleteButton';
 export default function LessonCard({ data, orderNumber, deleteAction }) {
     const isCompulsory = data?.compulsory ? styles.danger : styles.warning;
 
-    console.log(data);
+   
 
     return (
         <div className={`${styles.cardContainer} ${isCompulsory}`}>

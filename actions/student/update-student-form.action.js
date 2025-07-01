@@ -33,7 +33,7 @@ export const updateStudentFormAction = async (state, formData) => {
   try {
     const response = await updateStudent(payload, id);
 
-    console.log(response);
+    
     if (!response.ok) return errorObject("Failed to update Student.", data);
 
     check = true;

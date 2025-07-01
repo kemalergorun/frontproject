@@ -13,7 +13,7 @@ export const createManagerFormAction = async (state, formData) => {
 
   const validationResult = createAdminSchema.safeParse(trimmedData);
 
-  console.log(validationResult);
+
 
   if (!validationResult.success) {
     return {
