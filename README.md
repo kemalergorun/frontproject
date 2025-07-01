@@ -50,3 +50,4 @@ docs.stripe.com
 motion.dev
 mui.com
 https://www.netlify.com/
+firebase.com
