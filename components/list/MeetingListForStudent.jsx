@@ -17,11 +17,13 @@ export default async function MeetingListForStudent() {
         <div className={styles.container}>
             <div className={styles.cardsContainer}>
                 {isDataAvailable ? (
-                    <MeetingCard
-                        key={index}
-                        data={item}
-                        orderNumber={calculateOrderNumber(1, 500, index)}
-                    />
+                    data.map((item, index) => (
+                        <MeetingCard
+                            key={index}
+                            data={item}
+                            orderNumber={calculateOrderNumber(1, 500, index)}
+                        />
+                    ))
                 ) : (
                     <NoDataAvailable />
                 )}

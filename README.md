@@ -40,3 +40,12 @@ Zeynep1         34773477Ze teacher
 Zeynep2             student
 manager332 123123Qwe
 admin332 123123Qwe
+asman999   123123Qwe
+teacher000 123123Qwe
+
+frontend mentor
+react dev
+next js
+docs.stripe.com
+motion.dev
+mui.com
